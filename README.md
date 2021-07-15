@@ -1,16 +1,24 @@
-<img src="logo.png" alt="CliNTREc">
+<img src="images/logo.png" alt="CliNTREc">
 
-# CliNTREc
+# Clinical NPL Trial Recruitment (CliNTREc)
 
 A cohort selection system for clinical trials
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+[Download](https://github.com/paivagio/CliNTREc/archive/refs/heads/main.zip) the repository and make sure you have all the required dependecies installed.
+
+## Dependecies 
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependecies bellow, if you don't already have them.
 
 ```bash
 pip install foobar
 ```
+
+Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it on **models/BioBertPtAllClinPt** folder. You folder should look like this when done:
+
+![picture alt](http://via.placeholder.com/200x150)
 
 ## Usage
 
@@ -34,16 +42,16 @@ The system is run by command line but you can also use the useful wrapper provid
 
 This system accepts text file input for both clinical trial and EHR tasks. The text file needs to be in a specific format that is showcased in the example files in **temp** folder. It is also possible to use a clinical trial's ID. For detailed information please refer to the descriptions bellow. 
 
-- Clinical trial text file
+#### Clinical trial text file
 > The clinical trial text file consists of two lines, the first containing the inclusion criteria and the second the exclusion criteria
 
-- Clinical trial ID
+#### Clinical trial ID
 > The clinical trial ID must be collected from [ReBEC (Registro Brasileiro de Ensaios Clínicos)](https://ensaiosclinicos.gov.br/) and can be found on the header of any clinical trial (see picture bellow).
 >
 > ![picture alt](http://via.placeholder.com/200x150)
 
 
-- EHR text file
+#### EHR text file
 > The EHR text file consists of 6 follow-on topics (see bellow). The topics are in portuguese and must remain as shown, otherwise the algorithm won't work.
 >
 > ID: Patient's ID (just for identification, fill as you like)\
@@ -58,6 +66,8 @@ This system accepts text file input for both clinical trial and EHR tasks. The t
 ### 3. Eligibilty Criteria Extraction
 
 - From text file
+
+
 
 ```bash
 python main.py -i "input folder" -o "output folder" -t "filename.txt"
