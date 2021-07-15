@@ -30,7 +30,7 @@ The system is run by command line but you can also use the useful wrapper provid
 
 | Parameter | Default | Description  |
 |----------|---------|--------------|
-| `-h`     | temp    | Help message |
+| `-h`     |     | Help message |
 | `-i`     | temp    | Input folder |
 | `-o`     | temp  | Output folder |
 | `-t`     | ec.txt  | Clinical trial filename |
