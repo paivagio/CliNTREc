@@ -1,4 +1,4 @@
-<img src="images/logo.png" alt="CliNTREc">
+![picture alt](images/logo.png)
 
 # Clinical NPL Trial Recruitment (CliNTREc)
 
