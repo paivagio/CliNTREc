@@ -68,7 +68,7 @@ This system accepts text file input for both clinical trial and EHR tasks. The t
 > Data de nascimento: Pacient's birth date\
 > RES\*: Pacient's EHR free-text
 >
-> \* Critical! The absence of this topic will interfere in the overall perfomance of the system.
+> \* Critical! The absence of this topic will interfere in the overall performance of the system.
 
 ### 3. Eligibilty Criteria Extraction
 
