@@ -48,7 +48,7 @@ This system accepts text file input for both clinical trial and EHR tasks. The t
 #### Clinical trial ID
 > The clinical trial ID must be collected from [ReBEC (Registro Brasileiro de Ensaios Clínicos)](https://ensaiosclinicos.gov.br/) and can be found on the header of any clinical trial (see picture bellow).
 >
-> ![picture alt](http://via.placeholder.com/200x150)
+> ![picture alt](images/trial_id.png)
 
 
 #### EHR text file
