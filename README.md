@@ -13,7 +13,14 @@ A cohort selection system for clinical trials
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the dependecies bellow, if you don't already have them.
 
 ```bash
-pip install foobar
+$ pip install numpy
+$ pip install bs4
+$ pip install nltk
+$ pip install lxml
+$ pip install progress
+$ pip install transformers
+$ pip install stanza
+$ pip install gensim
 ```
 
 Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it on **models/BioBertPtAllClinPt** folder. Your folder should look like this when done:
