@@ -79,13 +79,13 @@ python main.py -i "input folder" -o "output folder" -t "filename.txt"
 python main.py -i "input folder" -o "output folder" -id "trial id"
 ```
 
-### EHR Information Extraction
+### 4. EHR Information Extraction
 
 ```bash
 python main.py 
 ```
 
-### Cohort selection
+### 5. Cohort selection
 ```
 ```
 
