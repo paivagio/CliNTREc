@@ -65,8 +65,8 @@ This system accepts text file input for both clinical trial and EHR tasks. The t
 > Idade\*: Patient's age\
 > Sexo: Patient's gender\
 > CID: The International Classification of Diseases (ICD) related to the EHR\
-> Data de nascimento: Pacient's bith date\
-> RES\*: Pacient's free-text
+> Data de nascimento: Pacient's birth date\
+> RES\*: Pacient's EHR free-text
 >
 > \* Critical! The absence of this topic will interfere in the overall perfomance of the system.
 
