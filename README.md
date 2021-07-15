@@ -16,9 +16,9 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the dep
 pip install foobar
 ```
 
-Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it on **models/BioBertPtAllClinPt** folder. You folder should look like this when done:
+Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it on **models/BioBertPtAllClinPt** folder. Your folder should look like this when done:
 
-![picture alt](http://via.placeholder.com/200x150)
+![picture alt](images/bert_folder.png)
 
 ## Usage
 
