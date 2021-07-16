@@ -1,8 +1,8 @@
 ![picture alt](images/logo.png)
 
-![Badge](	https://img.shields.io/github/license/paivagio/CliNTREc)
 
-# Clinical NPL Trial Recruitment (CliNTREc)
+
+# Clinical NPL Trial Recruitment (CliNTREc) ![Badge](	https://img.shields.io/github/license/paivagio/CliNTREc)
 
 A cohort selection system for clinical trials
 
