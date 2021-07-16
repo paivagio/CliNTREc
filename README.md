@@ -74,19 +74,19 @@ This system accepts text file input for both clinical trial and EHR tasks. The t
 
 #### From text file
 
-```
+```bash
 python main.py -i "input folder" -o "output folder" -t "filename.txt"
 ```
 
 #### From ID
 
-```
+```bash
 python main.py -i "input folder" -o "output folder" -id "trial id"
 ```
 
 ### 4. EHR Information Extraction
 
-```
+```bash
 python main.py -i "input folder" -o "output folder" -e "filename.txt"
 ```
 
@@ -94,7 +94,7 @@ python main.py -i "input folder" -o "output folder" -e "filename.txt"
 The cohort selection system can be run directly by a previously structured XML file or can be added in the [Eligibility Criteria Extraction]() pipeline by appending the `-s True` parameter to the end of the command.
 
 #### Direct method
-```
+```bash
 python main.py -i "input folder" -o "output folder" -t "filename.xml" -s True
 ```
 
