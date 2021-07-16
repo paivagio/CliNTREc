@@ -102,6 +102,3 @@ python main.py -i "input folder" -o "output folder" -t "filename.xml" -s True
 
 ## Acknowledgement
 ...
-
-## Status
-**Work in progress...**
