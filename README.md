@@ -100,5 +100,7 @@ The cohort selection system can be run directly by a previously structured XML f
 python main.py -i "input folder" -o "output folder" -t "filename.xml" -s True
 ```
 
+> NOTICE: 
+
 ## Acknowledgement
 ...
