@@ -103,8 +103,5 @@ python main.py -i "input folder" -o "output folder" -t "filename.xml" -s True
 ## Acknowledgement
 ...
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
 ## Status
 **Work in progress...**
