@@ -100,7 +100,7 @@ The cohort selection system can be run directly by a previously structured XML f
 python main.py -i "input folder" -o "output folder" -t "filename.xml" -s True
 ```
 
-> NOTICE: The system will look for the clincal trial in the **ec** folder and for the pacients in the **pacients** folder.
+> NOTICE: The system will look for the clinical trial in the **/ec** folder and will use the structured ehrs avaiable at the **/pacients** folder.
 
 ## Acknowledgement
 ...
