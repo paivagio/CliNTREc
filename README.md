@@ -72,7 +72,7 @@ This system accepts text file input for both clinical trial and EHR tasks. The t
 >
 > \* Critical! The absence of this topic will interfere in the overall performance of the system.
 
-### 3. Eligibilty Criteria Extraction
+### 3. Eligibility Criteria Extraction
 
 #### From text file
 
