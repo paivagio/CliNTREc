@@ -4,7 +4,7 @@
 
 # Clinical NPL Trial Recruitment (CliNTREc) ![Badge](	https://img.shields.io/github/license/paivagio/CliNTREc) ![Badge](https://img.shields.io/badge/status-work%20in%20progress-orange)
 
-A cohort selection system for clinical trials
+A cohort selection system for clinical trials.
 
 ## Installation
 
@@ -25,7 +25,7 @@ $ pip install stanza
 $ pip install gensim
 ```
 
-Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it inside the **models/BioBertPtAllClinPt** folder. Your folder should look like this when done:
+Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it inside **models/BioBertPtAllClinPt** folder. Your folder should look like this when done:
 
 ![picture alt](images/bert_folder.png)
 
