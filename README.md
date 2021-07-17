@@ -25,7 +25,7 @@ $ pip install stanza
 $ pip install gensim
 ```
 
-Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it on **models/BioBertPtAllClinPt** folder. Your folder should look like this when done:
+Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tree/master/model) from [lisaterumi](https://github.com/lisaterumi) and put it inside the **models/BioBertPtAllClinPt** folder. Your folder should look like this when done:
 
 ![picture alt](images/bert_folder.png)
 
