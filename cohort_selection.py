@@ -26,12 +26,14 @@ def areSimilar(text1, text2, w2v, vocab):
         return False            
 
 def countPositives(dic):
+    cohort = []
     num = 0
     for t in dic:
         if t[1] > 0:
             num+=1
+            cohort.append(t[0])
     print(f'\nYour clinical trial has {num} elegible pacients!\n')
-    return num
+    return cohort
 
 def findMyPacients(dirEc, dirPacients):
     tags = ['CONDITIONS','OBSERVATIONS','PROCEDURES_DEVICES','DRUGS_SUBSTANCES', 'CONCEPTS']
@@ -109,7 +111,11 @@ def findMyPacients(dirEc, dirPacients):
         candidates[idP] = score
         
     sorted_candidates = sorted(candidates.items(), key=lambda x: x[1], reverse=True)
-    countPositives(sorted_candidates)
+    cohort = countPositives(sorted_candidates)
+    filename = re.sub('(\.xml)|(\_structured\.xml)', '', dirEc.split('/')[-1])
+    with open ('temp/'+filename+'_pacients.txt', 'w') as file:
+        for selected in cohort:
+            file.write(selected+'\n')
 
 def countPositivesP(dic):
     num = 0
