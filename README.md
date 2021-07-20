@@ -29,7 +29,7 @@ Download the [BioBERTpt NER model](https://github.com/HAILab-PUCPR/BioBERTpt/tre
 
 ## Usage
 
-The system is run by command line but you can also use the useful wrapper provided or the [oficial interface](https://github.com/paivagio/CliNTREc-Interface). Bellow are listed the available parameters and usage sintax.
+The system is run by command line but you can also use the useful [wrapper](https://github.com/paivagio/CliNTREc/blob/main/wrapper.sh) provided or the [oficial interface](https://github.com/paivagio/CliNTREc-Interface). Bellow are listed the available parameters and usage sintax.
 
 ### 1. Sintax
 
