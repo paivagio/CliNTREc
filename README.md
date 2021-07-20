@@ -91,7 +91,7 @@ python main.py -i "input folder" -o "output folder" -e "filename.txt"
 ```
 
 ### 5. Cohort selection
-The cohort selection system can be run directly by a previously structured XML file or can be added in the **Eligibility Criteria Extraction** pipeline by appending the `-s True` parameter to the end of the command.
+The cohort selection system can be run directly by a previously structured XML file or can be added in the **Eligibility Criteria Extraction** pipeline by appending the `-s True` parameter to the end of the command. At the end you will find a text file in your output folder containing the ID of all selected pacients.
 
 #### Direct method
 ```bash
