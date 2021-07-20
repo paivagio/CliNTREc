@@ -20,8 +20,7 @@ def pacientStructuring(inPath, outPath):
     
     tree=ET.ElementTree(file=inPath)
     filename = re.sub('.xml', '_structured.xml', inPath.split('/')[-1])
-    outFile = os.path.join(outPath, filename)            
-    
+    outFile = outPath +'/'+ filename            
     
     root = tree.getroot()            #source XML
     newroot = etree.Element("root")  #structured XML
@@ -95,7 +94,7 @@ def ecStructuring(inPath, outPath):
         
     tree=ET.ElementTree(file=inPath)
     filename = re.sub('.xml', '_structured.xml', inPath.split('/')[-1])
-    outFile = os.path.join(outPath, filename)               
+    outFile = outPath +'/'+ filename               
     
     root = tree.getroot()            #source XML
     newroot = etree.Element("root")  #structured XML

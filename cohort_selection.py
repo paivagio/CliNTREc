@@ -5,6 +5,7 @@ Created on Fri Jul  9 18:15:26 2021
 @author: paiva
 """
 import os
+import re
 
 from progress.bar import IncrementalBar
 from xml.etree import ElementTree as ET
@@ -53,69 +54,72 @@ def findMyPacients(dirEc, dirPacients):
     for f in files(dirPacients):
         count+=1
     
-    print(f'Found {count} pacients\n')
-    
-    #Progression bar
-    bar = IncrementalBar('Cohort Selection', max = count, suffix='%(percent)d%%')
-    
-    for filename in bar.iter(files(dirPacients)):
-        score = 0
-        pacient = ET.ElementTree(file=dirPacients+filename)                   
-        rootP = pacient.getroot() 
-        idP = rootP.find('ID').text
+    if count == 0:
+        print('Found no pacients! Cancelling cohort selection.')
+    else:
+        print(f'Found {count} pacients\n')
         
+        #Progression bar
+        bar = IncrementalBar('Cohort Selection', max = count, suffix='%(percent)d%%')
         
-        if gender != 'any':
-            if  gender != rootP.find('AGE').text:
-                score-=20
-            else:
-                score+=20
-        
-        modifier = 1
-        for crit in ecRoot:
-            if crit.tag in skip:
-                continue
-            for tag, tag2 in zip(tags, tags2):
-                for ent in crit.find(tag).findall(tag2):
-                    textEc = ent.text.lower()
-                    match = False
-                    negated = False
-                    mea_match = 0
-                    
-                    for ent2 in rootP.find(tag).findall(tag2):
-                        textEnt = ent2.text.lower()
-                        if textEnt == textEc or areSimilar(textEnt, textEc, w2v_model, vocab):
-                            match = not match
-                            if ent2.attrib['negated'] == 'Y':
-                                negated = not negated
+        for filename in bar.iter(files(dirPacients)):
+            score = 0
+            pacient = ET.ElementTree(file=dirPacients+filename)                   
+            rootP = pacient.getroot() 
+            idP = rootP.find('ID').text
+            
+            
+            if gender != 'any':
+                if  gender != rootP.find('AGE').text:
+                    score-=20
+                else:
+                    score+=20
+            
+            modifier = 1
+            for crit in ecRoot:
+                if crit.tag in skip:
+                    continue
+                for tag, tag2 in zip(tags, tags2):
+                    for ent in crit.find(tag).findall(tag2):
+                        textEc = ent.text.lower()
+                        match = False
+                        negated = False
+                        mea_match = 0
+                        
+                        for ent2 in rootP.find(tag).findall(tag2):
+                            textEnt = ent2.text.lower()
+                            if textEnt == textEc or areSimilar(textEnt, textEc, w2v_model, vocab):
+                                match = not match
+                                if ent2.attrib['negated'] == 'Y':
+                                    negated = not negated
+                                    
+                                fields = ['value', 'time', 'place']
+                                for f in fields:
+                                    tEc = ent.attrib[f].split('|')
+                                    tP = ent2.attrib[f].split('|')
+                                    for t1 in tEc:
+                                        for t2 in tP:
+                                            if t1=='' or t2=='':
+                                                continue
+                                            if t1 == t2:
+                                                mea_match+=0.5
+                                            else:
+                                                mea_match-=0.5
                                 
-                            fields = ['value', 'time', 'place']
-                            for f in fields:
-                                tEc = ent.attrib[f].split('|')
-                                tP = ent2.attrib[f].split('|')
-                                for t1 in tEc:
-                                    for t2 in tP:
-                                        if t1=='' or t2=='':
-                                            continue
-                                        if t1 == t2:
-                                            mea_match+=0.5
-                                        else:
-                                            mea_match-=0.5
-                            
-                    if match and not negated:
-                        score+= 5*modifier+mea_match
-                    else:
-                        pass
-                        #score+= -1*modifier     
-            modifier = -1
-        candidates[idP] = score
-        
-    sorted_candidates = sorted(candidates.items(), key=lambda x: x[1], reverse=True)
-    cohort = countPositives(sorted_candidates)
-    filename = re.sub('(\.xml)|(\_structured\.xml)', '', dirEc.split('/')[-1])
-    with open ('temp/'+filename+'_pacients.txt', 'w') as file:
-        for selected in cohort:
-            file.write(selected+'\n')
+                        if match and not negated:
+                            score+= 5*modifier+mea_match
+                        else:
+                            pass
+                            #score+= -1*modifier     
+                modifier = -1
+            candidates[idP] = score
+            
+        sorted_candidates = sorted(candidates.items(), key=lambda x: x[1], reverse=True)
+        cohort = countPositives(sorted_candidates)
+        filename = re.sub('(\.xml)|(\_structured\.xml)', '', dirEc.split('/')[-1])
+        with open ('temp/'+filename+'_pacients.txt', 'w') as file:
+            for selected in cohort:
+                file.write(selected+'\n')
 
 def countPositivesP(dic):
     num = 0
