@@ -98,7 +98,7 @@ The cohort selection system can be run directly by a previously structured XML f
 python main.py -i "input folder" -o "output folder" -t "filename.xml" -s True
 ```
 
-> NOTICE: The system will look for the clinical trial in the **/ec** folder and will consider the structured EHRs available at the **/pacients** folder as the candidates. Also pay attention that **/ec** and **/pacients** are created in the output folder during the previous tasks.
+> NOTICE: The system will look for the clinical trial in the **/ec** folder and will consider the structured EHRs available at the **/pacients** folder as the candidates. Also pay attention that **/ec** and **/pacients** are created in the output folder during the previous tasks, but for the **Direct method** it will look for them in the input folder.
 
 ## Acknowledgement
 Special thanks to all the amazing people from [HAILab](https://github.com/HAILab-PUCPR) who helped me throughout this project and also to [Fundação Araucária](http://www.fappr.pr.gov.br/) for the research grant.
