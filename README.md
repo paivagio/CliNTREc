@@ -6,7 +6,11 @@ A cohort selection system for clinical trials.
 
 ## Installation
 
-[Download](https://github.com/paivagio/CliNTREc/archive/refs/heads/main.zip) the repository and ensure you have all the required dependecies installed.
+Download the repository and ensure you have all the required dependecies installed.
+
+| Name | Version | Date | Link |
+|------|:------:|------|:------:|
+| CliNTREc  | 1.0 | 21/07/2021 |[Download](https://github.com/paivagio/CliNTREc/archive/refs/heads/main.zip)|
 
 ## Dependecies 
 
