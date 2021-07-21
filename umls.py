@@ -153,7 +153,7 @@ sty2ellie =    {'T001':'Drug_Substance',#Organism
 operators = ['maior que','menor que','maior igual a','menor igual a','igual a','igual ou superior a', 'primeiras',
              'acima de', 'abaixo de', 'pelo menos', 'no mínimo', 'no máximo', 'mais de', 'menos de', 'até', 'superior a',
              'inferior a', 'igual ou inferior', 'últimos', 'maior ou igual a', 'menor ou igual a', 'ao menos',
-             'maior do que', 'menor do que', 'mais alta que', 'mais baixa que']
+             'maior do que', 'menor do que', 'mais alta que', 'mais baixa que', 'menor', 'maior']
 
 triggers = ['mm', 'cm', 'dm', 'm', 'dam', 'hm', 'km', 'ms', 's',
             'min', 'h', 'hs', 'mg', 'ng', 'g', 'kg', 'ml', 'l',
@@ -442,7 +442,7 @@ def findMeasuresAndConcepts(text, trigs, ops):
                     mea.append((m[0], 'B-Measurement', f'T{ind}', 'has'))
                 mea.append((m[1], 'I-Measurement', f'T{ind}', 'has'))
                 mea.append((m[2], 'I-Measurement', f'T{ind}', 'has'))
-                mea.append((m[3], 'B-Concept', f'T{ind}:has_value'), 'has')
+                mea.append((m[3], 'B-Concept', f'T{ind}:has_value', 'has'))
                 ind+=1
 
         pattern = f'\s({op})\s(\d+|\d+\,\d+|\d+\.\d+)\s(\w+)\s(?!de\s)'                          #op X t
@@ -689,8 +689,9 @@ def main(file_name, inp, out, ec_id):
             with open(input_dir+'/'+text_file, 'r', encoding='UTF-8') as f:
                 trial = f.read()
             in_crit, ex_crit = split_criteria(trial) #separate inclusion and exclusion criteria
-        except:
+        except Exception as e:
             print("Error 02!")
+            print(str(e))
             sys.exit(1)
         else:
             print("File successfully opened.\n")
